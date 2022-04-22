@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 function Home() {
   
     let firstname= localStorage.getItem('FirstName').replace(/"/g, "");
-    let middlename= localStorage.getItem('Middlename').replace(/"/g, "");
+    let middlename= localStorage.getItem('MiddleName').replace(/"/g, "");
     let lastname= localStorage.getItem('LastName').replace(/"/g, "");
     let college= localStorage.getItem('College').replace(/"/g, "");
     let course= localStorage.getItem('ProgramEnrolled').replace(/"/g, "");

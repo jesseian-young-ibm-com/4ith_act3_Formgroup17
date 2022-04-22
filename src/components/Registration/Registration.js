@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-//import "../../balls";
 import { Form, Alert } from 'react-bootstrap';
-import {BrowserRouter as Router, Route, Link, NavLink, Switch} from "react-router-dom";
+import {BrowserRouter as Link, NavLink} from "react-router-dom";
 import { Redirect } from 'react-router';
 
 function Registration() {
@@ -36,7 +35,7 @@ function Registration() {
             localStorage.setItem("StudentID", JSON.stringify(studentnumber));
             localStorage.setItem("Password", JSON.stringify(password));
             localStorage.setItem("FirstName", JSON.stringify(givenname));
-            localStorage.setItem("Middlename", JSON.stringify(middlename));
+            localStorage.setItem("MiddleName", JSON.stringify(middlename));
             localStorage.setItem("LastName", JSON.stringify(lastname));
             localStorage.setItem("College", JSON.stringify(college));
             localStorage.setItem("ProgramEnrolled", JSON.stringify(programenrolled));

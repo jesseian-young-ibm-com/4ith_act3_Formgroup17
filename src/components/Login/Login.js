@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { Alert } from 'react-bootstrap';
-import Home from '../home/Home';
-//import Registration from '../Registration/Registration';
-//import "../../balls";
-import {BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect} from "react-router-dom";
+import {BrowserRouter as Link, NavLink, Redirect} from "react-router-dom";
 
 function Login() {
 
