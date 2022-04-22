@@ -14,7 +14,7 @@ function Registration() {
     const [confirmpassword, setConfirmPassword] = useState("");
 
     const [programenrolled, setProgramEnrolled] = useState("");
-    const [setyearlevel, setYearLevel] = useState("");
+    const [yearlevel, setYearLevel] = useState("");
 
     const [flag, setFlag] = useState(false);
     const [login, setLogin] = useState(true);
@@ -23,7 +23,7 @@ function Registration() {
     function handleFormSubmit(e) {
         e.preventDefault();
 
-        if (!lastname || !givenname || !middlename || !college || !programenrolled || !setyearlevel || !studentnumber || !password) {
+        if (!lastname || !givenname || !middlename || !college || !programenrolled || !yearlevel || !studentnumber || !password) {
             setFlag(true); 
         }
         else if((password !== confirmpassword)){
@@ -39,7 +39,7 @@ function Registration() {
             localStorage.setItem("LastName", JSON.stringify(lastname));
             localStorage.setItem("College", JSON.stringify(college));
             localStorage.setItem("ProgramEnrolled", JSON.stringify(programenrolled));
-            localStorage.setItem("YearLevel", JSON.stringify(setyearlevel));
+            localStorage.setItem("YearLevel", JSON.stringify(yearlevel));
             console.log("Saved in Local Storage");
             setLogin(!login)
             alert("Credentials have been saved successfully, you can now log in!")
