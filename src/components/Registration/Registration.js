@@ -102,7 +102,7 @@ function Registration() {
 
                 <div className="form-group">
                     <label>Student ID Number</label>
-                    <input type="text" className="form-control" placeholder="Student Number" required onChange={(event) => setStudentNumber(event.target.value)} />
+                    <input type="text" className="form-control" placeholder="Student Number" title="It must be 10 digit Student Number" pattern="[1-9]{1}[0-9]{9}" required onChange={(event) => setStudentNumber(event.target.value)} />
                 </div>
 
                 <div className="form-group">
