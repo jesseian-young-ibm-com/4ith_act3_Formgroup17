@@ -4,10 +4,11 @@ import {BrowserRouter as Link, NavLink, Redirect} from "react-router-dom";
 
 function Login() {
 
-    const [emaillog, setEmaillog] = useState(" ");
-    const [passwordlog, setPasswordlog] = useState(" ");
+    const [emaillog, setEmaillog] = useState("");
+    const [passwordlog, setPasswordlog] = useState("");
 
     const [flag, setFlag] = useState(false);
+    const [flags, setFlags] = useState(false);
 
     const [home, setHome] = useState(true);
 
@@ -19,11 +20,13 @@ function Login() {
         let firstname= localStorage.getItem('FirstName').replace(/"/g, "");
         // .replace(/"/g,"") is used to remove the double quotes for the string
 
-        if (!emaillog || !passwordlog) {
-            setFlag(true);
+        if ((emaillog== "") || (passwordlog=="")) {
+            setFlags(true);
+            setFlag(false);
             console.log("EMPTY");
         } else if ((passwordlog !== pass) || (emaillog !== studentid)) {
             setFlag(true);
+            setFlags(false);
         } else {
             setHome(!home);
             setFlag(false);
@@ -33,6 +36,7 @@ function Login() {
     
     function setClear(){
         setFlag(false);
+        setFlags(false);
     };
 
 
@@ -42,12 +46,12 @@ function Login() {
                 <h3>LogIn</h3>
                 <div className="form-group">
                     <label>Student ID</label>
-                    <input type="text" className="form-control" placeholder="Student Number" required onChange={(event) => setEmaillog(event.target.value)} />
+                    <input type="text" className="form-control" placeholder="Student Number"  onChange={(event) => setEmaillog(event.target.value)} />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" required onChange={(event) => setPasswordlog(event.target.value)} /><br/>
+                    <input type="password" className="form-control" placeholder="Enter password"  onChange={(event) => setPasswordlog(event.target.value)} /><br/>
                 </div>
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Login</button>
@@ -57,7 +61,9 @@ function Login() {
                 <br/>
                     Don't have an account?<NavLink   to="/register"> Register</NavLink> 
                 </p>
-                
+                {flags && <Alert color='primary' variant="warning" >
+                    Fill out the missing fields
+                        </Alert>}
                 {flag && <Alert color='primary' variant="warning" >
                     Incorrect Username or Password Please Try Again
                         </Alert>}
