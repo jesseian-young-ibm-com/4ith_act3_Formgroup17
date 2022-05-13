@@ -80,8 +80,8 @@ function Registration() {
 
                 <div className="form-group">
                     <label>Program Enrolled</label>
-                    <Form.Control as="select" onChange={(event) => setProgramEnrolled(event.target.value)} >
-                    <option>Course Option</option>
+                    <Form.Control as="select" onChange={(event) => setProgramEnrolled(event.target.value)} required>
+                    <option value="">Course Option</option>
                         <option>Computer Science</option>
                         <option>Information Technology</option>
                         <option>Information System</option>
@@ -91,8 +91,8 @@ function Registration() {
 
                 <div className="form-group">
                     <label>Year Level</label>
-                    <Form.Control as="select" onChange={(event) => setYearLevel(event.target.value)} >
-                    <option>Year Level</option>
+                    <Form.Control as="select" onChange={(event) => setYearLevel(event.target.value)} required >
+                    <option value="">Year Level</option>
                         <option>1st Year</option>
                         <option>2nd Year</option>
                         <option>3rd Year</option>
